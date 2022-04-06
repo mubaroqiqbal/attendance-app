@@ -2,6 +2,7 @@ import 'package:attendance_app/models/pinned_area_data.dart';
 import 'package:attendance_app/stores/map_store.dart';
 import 'package:attendance_app/ui/create_attendance.dart';
 import 'package:attendance_app/ui/pin_area.dart';
+import 'package:attendance_app/ui/view_attendance_data.dart';
 import 'package:attendance_app/utils/app_permissions.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -69,7 +70,7 @@ class _HomeState extends State<Home> {
               child: ElevatedButton.icon(
                 onPressed: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return PinArea(callback: _callback);
+                    return const ViewAttendanceData();
                   }));
                 },
                 icon: const Icon(Icons.history),
@@ -85,7 +86,7 @@ class _HomeState extends State<Home> {
               _mapStore.pinnedAreaData.value.longitude != 0 &&
               _mapStore.pinnedAreaData.value.address.isNotEmpty) {
             Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return CreateAttendance();
+              return const CreateAttendance();
             }));
           } else {
             Fluttertoast.showToast(
