@@ -143,7 +143,7 @@ class CreateAttendanceState extends State<CreateAttendance> {
       Navigator.pop(context);
     } else {
       Fluttertoast.showToast(
-          msg: "Jarak lokasi Check In dengan area absen melebih 50 Meter",
+          msg: "Jarak lokasi Check In dengan area absen melebihi 50 Meter",
           toastLength: Toast.LENGTH_LONG,
           gravity: ToastGravity.TOP,
           timeInSecForIosWeb: 1,
